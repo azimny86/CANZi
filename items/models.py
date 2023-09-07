@@ -14,7 +14,7 @@ class Items(models.Model):
     description = models.TextField()
     image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
-    status = models.ImageField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='items_likes', blank=True)
 
     class Meta:
